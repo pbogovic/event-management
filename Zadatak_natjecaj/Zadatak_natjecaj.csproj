@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{45798B03-BF1C-48A3-9A87-137530149C62}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Zadatak_natjecaj</RootNamespace>
+    <AssemblyName>Zadatak_natjecaj</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=1.50.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.1.50.2\lib\net45\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.1.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.1.2\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.1.2\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.1.2\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.1.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.1.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.1.2\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.1.2\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.1.2\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="administracijaOdjela.aspx" />
+    <Content Include="administracijaZaposlenika.aspx" />
+    <Content Include="Css\agency.css" />
+    <Content Include="font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Images\Aperture_Science.png" />
+    <Content Include="Images\plus_icon.png" />
+    <TypeScriptCompile Include="Scripts\AdministracijaZaposlenici.ts" />
+    <Content Include="Scripts\agency.js" />
+    <Content Include="Scripts\agency.min.js" />
+    <Content Include="Images\zaposlenik7.jpg" />
+    <Content Include="Images\zaposlenik8.jpg" />
+    <Content Include="Images\zaposlenik9.jpg" />
+    <Content Include="Css\bootstrap.min.css" />
+    <Content Include="Css\businessCard.css" />
+    <Content Include="Css\cardio.css" />
+    <Content Include="Content\chosen-sprite%402x.png" />
+    <Content Include="Content\chosen-sprite.png" />
+    <Content Include="Content\chosen.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\images.jpg" />
+    <Content Include="Images\jq_bg.jpg" />
+    <Content Include="Images\planiranje.png" />
+    <Content Include="Images\produkcija_img.jpeg" />
+    <Content Include="Images\trump_resized.jpg" />
+    <Content Include="Images\zaposlenik1.jpg" />
+    <Content Include="Images\zaposlenik2.jpg" />
+    <Content Include="Images\zaposlenik3.jpg" />
+    <Content Include="Images\zaposlenik4.jpg" />
+    <Content Include="Images\zaposlenik6.jpg" />
+    <Content Include="Scripts\jquery-3.2.1.min.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Scripts\jquery.form-validator.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Css\Zadatakcss.css" />
+    <TypeScriptCompile Include="Scripts\zaposlenici.ts" />
+    <Content Include="zaposlenici.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="administracijaOdjela.aspx.cs">
+      <DependentUpon>administracijaOdjela.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administracijaOdjela.aspx.designer.cs">
+      <DependentUpon>administracijaOdjela.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="administracijaZaposlenika.aspx.cs">
+      <DependentUpon>administracijaZaposlenika.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="administracijaZaposlenika.aspx.designer.cs">
+      <DependentUpon>administracijaZaposlenika.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Content\SiteMaster.Master.cs">
+      <DependentUpon>SiteMaster.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Content\SiteMaster.Master.designer.cs">
+      <DependentUpon>SiteMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Odjel.cs" />
+    <Compile Include="Models\Tasks.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controllers\zaposlenikController.cs" />
+    <Compile Include="Models\Zaposlenik.cs" />
+    <Compile Include="zaposlenici.aspx.cs">
+      <DependentUpon>zaposlenici.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="zaposlenici.aspx.designer.cs">
+      <DependentUpon>zaposlenici.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Content\SiteMaster.Master" />
+    <Content Include="font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="font-awesome-4.7.0\less\animated.less" />
+    <Content Include="font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="font-awesome-4.7.0\less\core.less" />
+    <Content Include="font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="font-awesome-4.7.0\less\icons.less" />
+    <Content Include="font-awesome-4.7.0\less\larger.less" />
+    <Content Include="font-awesome-4.7.0\less\list.less" />
+    <Content Include="font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="font-awesome-4.7.0\less\path.less" />
+    <Content Include="font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="font-awesome-4.7.0\less\variables.less" />
+    <Content Include="font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="font-awesome-4.7.0\scss\_variables.scss" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\administracijaOdjela.ts" />
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51144</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51144/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

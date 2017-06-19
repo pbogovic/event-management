@@ -1,0 +1,118 @@
+﻿body {
+    background: url('../Images/jq_bg.jpg');    
+    background-size: cover;
+}
+
+#wrapper {
+    background: linear-gradient(to bottom, #ffd65e 22%,#febf04 70%) no-repeat;
+}
+
+#top{
+
+    margin: 20px 300px;
+}
+
+h2, h3{
+    
+    margin:0 auto;
+    text-align:center;
+}
+
+#dodaj{
+    
+    display:block;    
+    margin: 0 auto;
+
+}
+
+#modalHead{
+    margin: 0 auto;
+}
+
+
+#modal{
+
+    width: 60%;
+    margin:0 auto;
+    
+
+}
+
+.modal_formGroup{
+
+    margin: 0 auto;
+    display:block;
+    text-align: center;
+    
+
+}
+
+
+#modal_dodaj1{
+    display:block;    
+    text-align:center;
+    margin: 0 auto;
+}
+
+footer{
+
+    color:white;
+    background-color: black;
+}
+
+.zaposlenik_text{
+    text-align:center;  
+}
+
+
+
+
+.bCard_cont {
+    
+    min-height: 200px;
+    min-width: 400px;
+    background-color: red;
+    border: 2px solid black;
+}
+
+
+
+
+.bCard_top{
+    
+    
+    min-height: 20px;
+    background-color: black;
+    color: white;
+    border-bottom: 2px solid red;
+    position:relative;
+
+}
+
+.bCard_mid {
+    
+    min-height: 20px;
+    color: black;
+    border-bottom: 2px solid red;
+    position: relative;
+}
+
+
+
+.navigacija {
+    padding: 0 !important;
+    z-index: 1;
+
+}
+
+
+.modal_form{
+
+
+    width: 80%;
+
+}
+
+
+
+
