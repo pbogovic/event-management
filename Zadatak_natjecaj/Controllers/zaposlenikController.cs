@@ -8,18 +8,18 @@ using System.Data.SqlClient;
 using Dapper;
 using Zadatak_natjecaj.Models;
 
+
 namespace Zadatak_natjecaj
 {
     public class zaposlenikController : ApiController
     {
         
 
-        public SqlConnection myConnection = new SqlConnection("Server=tcp:sqlserver-fat-we.database.windows.net,1433;Initial Catalog=patrikdemobase;Persist Security Info=False;User ID=EventProtectFATAdmin;Password=Goldenfazha1!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        public SqlConnection myConnection = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=em-Master;Integrated Security=True;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+           
 
-
-
-        // GET api/<controller>
-        [Route("api/zaposlenici/listall")]
+         // GET api/<controller>
+         [Route("api/zaposlenici/listall")]
         public IEnumerable <Zaposlenik> Get()
         {
             try
@@ -32,7 +32,7 @@ namespace Zadatak_natjecaj
 
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
 
         }
@@ -51,7 +51,7 @@ namespace Zadatak_natjecaj
 
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 
@@ -69,9 +69,29 @@ namespace Zadatak_natjecaj
 
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
+
+        [Route("api/zaposlenici/listOdjelWithInfo")]
+        public IEnumerable<Odjel> Get_odjeliWithInfo()
+        {
+
+            try
+            {
+                using (myConnection)
+                {
+                    return myConnection.Query<Odjel>("[dbo].[odjeli_listAllWithInfo]", new { }, commandType: System.Data.CommandType.StoredProcedure);
+                };
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
 
         [Route("api/zaposlenici/listOdjel/{odjel_id}")]
         public Odjel Get_odjeliByID(int odjel_id)
@@ -87,7 +107,7 @@ namespace Zadatak_natjecaj
 
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 
@@ -106,9 +126,56 @@ namespace Zadatak_natjecaj
 
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
+
+
+
+        [Route("api/izvjestaj/zapByOdjel")]
+        [HttpGet]
+        public IEnumerable<ZapByOdjel> zapByOdjel()
+        {
+
+            try
+            {
+                using (myConnection)
+                {
+                    return myConnection.Query<ZapByOdjel>("[dbo].[izvjestaj.zapByOdjel]", new {}, commandType: System.Data.CommandType.StoredProcedure);
+                };
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+        [Route("api/izvjestaj/zapByDoB")]
+        [HttpGet]
+        public IEnumerable<ZapByDoB> zapByDoB()
+        {
+
+            try
+            {
+                using (myConnection)
+                {
+                    return myConnection.Query<ZapByDoB>("[dbo].[izvjestaj_zapByDoB]", new { }, commandType: System.Data.CommandType.StoredProcedure);
+                };
+            }
+
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
+
+
+
+
 
 
 
@@ -127,7 +194,7 @@ namespace Zadatak_natjecaj
 
             catch (Exception ex)
             {
-                return null;
+                throw ex;
             }
 
             return "ret message";
@@ -154,7 +221,7 @@ namespace Zadatak_natjecaj
 
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
 
            
@@ -180,7 +247,7 @@ namespace Zadatak_natjecaj
 
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 
@@ -203,7 +270,7 @@ namespace Zadatak_natjecaj
 
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
 
         }
@@ -230,7 +297,7 @@ namespace Zadatak_natjecaj
 
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
 
         }
@@ -255,7 +322,7 @@ namespace Zadatak_natjecaj
 
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
 
         }
@@ -283,7 +350,7 @@ namespace Zadatak_natjecaj
 
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
 
         }

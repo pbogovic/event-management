@@ -122,7 +122,7 @@
 
                      <button  type="button" class="btn-default btn-lg" onclick="ZaposleniciProvjeriFormu(); return false;"><span><i class="fa fa-check"></i>   Spremi </span>  </button>
                                         
-                    <button  type="button" class="btn-default btn-lg" onclick="closeActiveModal(); return false;"><span><i class="fa fa-remove"></i>  Zatvori</span>  </button>
+                    <button  type="button" class="btn-default btn-lg" onclick="closeActiveModals(); return false;"><span><i class="fa fa-remove"></i>  Zatvori</span>  </button>
                     
 
 
@@ -208,7 +208,7 @@
 
                     <!--  <input id="modal_alter_submit" class="btn-default btn-lg" type="submit" value="Spremi" onclick="Zaposlenici_ProvjeriFormu_alter(); return false;" />
                    -->
-                   <button  type="button" class="btn-default btn-lg" onclick="Zaposlenici_ProvjeriFormu_alter(); return false;"><span><i class="fa fa-check"></i>   Spremi </span>  </button>
+                   <button  type="button" class="btn-default btn-lg" onclick="ZaposleniciProvjeriFormu_alter(); return false;"><span><i class="fa fa-check"></i>   Spremi </span>  </button>
                     
                      
 

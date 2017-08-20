@@ -1,5 +1,3 @@
-function getZaposlenici() {
-}
 function provjeriTaskove() {
     var mojiTaskovi = [];
     $("#tasks").find("input[data-rbr]").each(function (index, elem) {
@@ -17,20 +15,18 @@ function provjeriTaskove() {
 function StvoriKartice() {
     $.getJSON("api/zaposlenici/listall", function (data) {
         $("#galerija").empty();
+        console.log(JSON.stringify(data));
         $.each(data, function (key, val) {
             var element = $("#patrikovTemplate").html()
                 .replace("[ID]", val.Id)
                 .replace("[NAME_AND_SURNAME]", val.name + ' ' + val.surname)
                 .replace("[ODJEL_NAZIV]", val.odjel_naziv)
                 .replace("[COVER_IMAGE]", val.img_url)
-                .replace("[EMPLOYEE_IMAGE]", val.zaposlenik_img)
+                .replace("[EMPLOYEE_IMAGE]", val.pic_url)
                 .replace("[ODJEL]", val.odjel_naziv);
             $("#galerija").append(element);
         });
     });
-}
-function closeActiveModal() {
-    $("body").find("div[role=dialog].in").first().modal("hide");
 }
 function getTasks(id_Zaposlenik) {
     $("#tasks").empty();
@@ -44,10 +40,7 @@ function getTasks(id_Zaposlenik) {
         /*
 
         $("#modalTasks").on("shown.bs.modal", function (data) {
-
             $("#modalTasks").find("span[ident]").fadeIn(500);
-
-
         })
 
         $("#modalTasks").find("span[ident]").hide();
@@ -77,6 +70,9 @@ function addTask() {
         getTasks(idZ);
     });
 }
+function closeActiveModal() {
+    $("body").find("div[role=dialog].in").first().modal("hide");
+}
 $(function () {
     $("#_dob").datepicker({ dateFormat: "yy-mm-dd" });
     $("#alt_dob").datepicker({ dateFormat: "yy-mm-dd" });
@@ -104,6 +100,6 @@ $(function () {
             $("#odjel_id_filter").append(opcija2);
         });
     });
-    getZaposlenici();
+    StvoriKartice();
 });
 //# sourceMappingURL=zaposlenici.js.map

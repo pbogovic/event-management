@@ -7,7 +7,6 @@ namespace Zadatak_natjecaj
 {
     public class Zaposlenik
     {
-
         public int Id { get; set; }
 
         public string name { get; set; }
@@ -18,21 +17,15 @@ namespace Zadatak_natjecaj
 
         public int odjel_id { get; set; }
 
-        public string odjel_naziv { get; set;}
+        public string odjel_naziv { get; set; }
 
-        public string img_url { get; set; }
+        public float placa { get; set; }
 
-        public float placa { get; set; }       
-        
         public string info { get; set; }
 
         public string pic_url { get; set; }
 
-        public string zaposlenik_img { get; set; }
-        
-
-
-
+        public string zadaci { get; set; }
 
         /*
         public Zaposlenik(int _id, string _name, string _surname, string _DOB)
@@ -43,9 +36,5 @@ namespace Zadatak_natjecaj
             birthDate = _DOB;
         }
         */
-
     }
-
-
-
 }

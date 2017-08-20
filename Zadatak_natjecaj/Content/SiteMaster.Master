@@ -19,6 +19,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="../Scripts/jquery.form-validator.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
 
 
     <style>
@@ -140,6 +141,8 @@
                                 <li><a href="../zaposlenici.aspx">Pregled zaposlenika </a></li>
                                 <li><a href="../administracijaZaposlenika.aspx">Administracija zaposlenika</a></li>
                                 <li><a href="../administracijaOdjela.aspx">Administracija odjela</a></li>
+                                <li><a href="../Izvjestaj.aspx">Izvještaj</a></li>
+                                
                                 
                             </ul>
                         </div>

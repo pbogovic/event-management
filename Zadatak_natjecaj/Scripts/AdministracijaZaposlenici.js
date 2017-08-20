@@ -8,28 +8,22 @@ $(function () {
             { data: 'birthDate', title: "Datum rođenja", render: function (data) { return (new Date(data)).toLocaleDateString(); } },
             { data: 'odjel_naziv', title: "Odjel" },
             { data: 'placa', title: "Placa" },
-            { data: 'Id', title: 'Mijenjaj', render: function (data) { return "<input type ='button' value='Promijeni' onclick='getByid(" + data + ")' >"; } },
-            { data: 'Id', title: "Brisi", render: function (data) { return "<input type='button' value ='Brisi' onclick='deleteEmployee(" + data + ")'>"; } }
+            {
+                data: "zadaci", title: "Zadaci", render: function (data) {
+                    var mojString = data;
+                    var subovi = mojString.split("/");
+                    var rjeseni = parseInt(subovi[0].trim());
+                    var ukupni = parseInt(subovi[1].trim());
+                    return pBar_obradi(rjeseni, ukupni);
+                }
+            },
+            { data: 'Id', title: 'Mijenjaj', render: function (data) { return "<input type ='button' value='Promijeni' onclick='ZaposleniciGetByid(" + data + ")' >"; } },
+            { data: 'Id', title: "Brisi", render: function (data) { return "<input type='button' value ='Brisi' onclick='ZaposleniciDelete(" + data + ")'>"; } }
         ]
     });
-    //$("#modal_form_add").validate({)
-    /*
-    
-    $("#modal_form_alter").validate({
-
-        rules: {
-            placa_add: {
-                required: true,
-                digits:true
-            }
-        }
-    })
-
-    */
     $("#_dob").datepicker({ dateFormat: "yy-mm-dd" });
     $("#alt_dob").datepicker({ dateFormat: "yy-mm-dd" });
     $("#odjel_id_filter").on("change", function () {
-        console.log($("#odjel_id_filter").val());
         tableRef.search($("#odjel_id_filter").val());
         tableRef.draw();
     });
@@ -57,6 +51,7 @@ function ZaposleniciGet() {
         tableRef.clear();
         tableRef.rows.add(data);
         tableRef.draw();
+        $('[data-toggle="tooltip"]').tooltip();
     });
 }
 function ZaposleniciGetByid(idZaposlenik) {
@@ -68,14 +63,19 @@ function ZaposleniciGetByid(idZaposlenik) {
         $("#alt_dob").datepicker("setDate", new Date(data.birthDate));
         $("#odjel_id_alter").val(data.odjel_id);
         $("#placa_alter").val(data.placa);
-        console.log($("#idHolder").val());
     });
 }
 function ZaposleniciDelete(idZaposlenik) {
-    console.log("Poziv funkcije");
-    $.get("api/zaposlenici/remove/" + idZaposlenik, function () {
-        ZaposleniciGet();
-    });
+    console.log("Odkomentiraj funkciju");
+    /*
+
+    $.get("api/zaposlenici/remove/" + idZaposlenik,
+        function () {
+           ZaposleniciGet();
+        },
+    )
+
+    */
 }
 function ZaposleniciProvjeriFormu() {
     if ($("#modal").isValid()) {
@@ -88,9 +88,8 @@ function ZaposleniciProvjeriFormu() {
         }, function () {
             ZaposleniciGet();
         });
-        console.log("User data sent");
         alert("SPREMLJENO!");
-        closeActiveModal();
+        closeActiveModals();
     }
 }
 function ZaposleniciProvjeriFormu_alter() {
@@ -105,10 +104,31 @@ function ZaposleniciProvjeriFormu_alter() {
         }, function () {
             ZaposleniciGet();
         });
-        console.log($("#alt_surname").val());
-        console.log("Alter data sent");
         alert("Podaci Izmijenjeni!");
-        closeActiveModal();
+        closeActiveModals();
+    }
+}
+function closeActiveModals() {
+    $("body").find("div[role=dialog].in").first().modal("hide");
+}
+function progress(data) {
+    var izvrseni = null;
+    var ukupni = null;
+    return '78879';
+}
+function pBar_obradi(rjeseni, ukupni) {
+    if (ukupni == 0) {
+        var html = "<span> Nema zadatka </span> ";
+        return html;
+    }
+    if (rjeseni == 0) {
+        var html = "<div class = 'row'  make='1' ><div class = 'pBarRed col-lg-8' data-toggle = 'tooltip'    title = '" + rjeseni + "/" + ukupni + "'> </div>  <div class = 'col-lg-4'> </div> </div> ";
+        return html;
+    }
+    else {
+        var postotak = (rjeseni / ukupni) * 100;
+        html = "<div class='row' make='1' ><div class = 'pBarRed col-lg-8'  data-toggle = 'tooltip' title= '" + rjeseni + "/" + ukupni + "'> <div class = 'pBarGreen'  style = 'width: " + postotak + "%';> </div> </div> <div class = 'col-lg-4 title'></div></div>";
+        return html;
     }
 }
 //# sourceMappingURL=AdministracijaZaposlenici.js.map

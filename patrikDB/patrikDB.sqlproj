@@ -8,7 +8,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
     <ProjectGuid>{0ebce341-6c87-4c54-8289-54794f8d0014}</ProjectGuid>
-    <DSP>Microsoft.Data.Tools.Schema.Sql.SqlAzureV12DatabaseSchemaProvider</DSP>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql140DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
     </RootPath>
@@ -24,6 +24,7 @@
     <IncludeCompositeObjects>True</IncludeCompositeObjects>
     <TargetDatabaseSet>True</TargetDatabaseSet>
     <IncludeSchemaNameInFileName>True</IncludeSchemaNameInFileName>
+    <GenerateCreateScript>True</GenerateCreateScript>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -62,6 +63,7 @@
     <Folder Include="dbo\Tables" />
     <Folder Include="dbo\Sequences" />
     <Folder Include="dbo\Stored procedures" />
+    <Folder Include="Snapshots" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\zaposlenici.sql" />
@@ -72,7 +74,7 @@
     <Build Include="dbo\Stored procedures\dbo.zaposlenici_update.sql" />
     <Build Include="dbo\Tables\dbo.odjeli.sql" />
     <Build Include="dbo\Sequences\odjeli_seq.sql" />
-    <Build Include="dbo\Stored procedures\dbo.odjeli_listAll.sql" />
+    <Build Include="dbo\Stored procedures\dbo.odjeli_listAllWithInfo.sql" />
     <Build Include="dbo\Stored procedures\dbo.zaposlenici_delete.sql" />
     <Build Include="dbo\Stored procedures\dbo.listFiltered.sql" />
     <Build Include="dbo\Tables\dbo.zaposlenici_tasks.sql" />
@@ -83,8 +85,14 @@
     <Build Include="dbo\Stored procedures\dbo.odjeli_add.sql" />
     <Build Include="dbo\Sequences\dbo.tasks_seq.sql" />
     <Build Include="dbo\Stored procedures\dbo.tasks_add.sql" />
+    <Build Include="dbo\Stored procedures\dbo.izvjestaj.zapByOdjel.sql" />
+    <Build Include="dbo\Stored procedures\dbo.izvjestaj_zapByDoB.sql" />
+    <Build Include="dbo\Stored procedures\dbo.odjeli_listAll.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="patrikDB.refactorlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Snapshots\patrikDB_20170820_09-09-08.dacpac" />
   </ItemGroup>
 </Project>
