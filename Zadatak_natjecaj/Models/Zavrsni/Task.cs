@@ -5,16 +5,18 @@ using System.Web;
 
 namespace Zadatak_natjecaj.Models.Zavrsni
 {
-    public class Task { 
-    
-        public int event_id { get; set; }
+    public class Task
+    {
+        public int Id { get; set; }
 
-        public int task_id { get; set; }
+        public int Id_Event { get; set; }
 
-        public int task_name { get; set; }
+        public int Name { get; set; }
 
-        public bool isComplete { get; set;}
+        public bool IsComplete { get; set; }
 
+        public int Rbr { get; set; }
 
+        public List<int> Zadaci { get; set; }
     }
 }

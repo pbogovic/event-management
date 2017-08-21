@@ -1,4 +1,4 @@
-﻿namespace Models {
+﻿namespace Models.Old {
     export interface Zaposlenik {
         Id: number;
         name: string;
@@ -9,6 +9,7 @@
         placa: number;
         info: string;
         pic_url: string;
+        img_url: string;
         zadaci: string;
     }
 }

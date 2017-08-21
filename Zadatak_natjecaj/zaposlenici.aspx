@@ -8,9 +8,6 @@
             margin: 0;
         }
 
-
-
-
         .custom {
             padding-left: 40px;
         }
@@ -26,8 +23,6 @@
         }
     </style>
 
-
-
     <title>Zadatak</title>
 </asp:Content>
 
@@ -39,7 +34,6 @@
             <div class="row text-center title">
 
                 <h1>Pregled zaposlenika</h1>
-
             </div>
 
             <div class="row">
@@ -48,16 +42,11 @@
                     <select id="odjel_id_filter" class="modal_form_small" required="true">
 
                         <option value="">All</option>
-
                     </select>
                 </div>
             </div>
-
-
-
         </div>
     </div>
-
 
     <section id="portfolio">
 
@@ -65,14 +54,7 @@
             <div class="row" id="galerija">
             </div>
         </div>
-
-
     </section>
-
-
-
-
-
 
     <div class="modal fade" id="modalTasks" role="dialog">
 
@@ -83,7 +65,6 @@
                 <div class="modal-header">
 
                     <h3>Zadaci</h3>
-
                 </div>
 
                 <form id="modal_tasks" target="">
@@ -102,16 +83,12 @@
                                     <input id="new_task" type="text" maxlength="50" />
 
                                     <span class="fa fa-plus-circle fa-lg" onclick="addTask()"></span>
-                                    <!-- 
+                                    <!--
                                         <img class="linkify" height="25" width="25" src="Images/plus_icon.png" onclick="addTask()" /></span>
                                             -->
-
-
                                 </span>
                             </div>
-
                         </div>
-
                     </div>
 
                     <div class="modal-footer">
@@ -120,20 +97,14 @@
                         <input id="modal_tasks_button" class="btn-default btn-lg" type="submit" value="Spremi zadatke" onclick="provjeriTaskove(); return false;" />
                       -->
 
-                        <button type="button" class="btn-default btn-lg" onclick="provjeriTaskove(); return false;"><span><i class="fa fa-check"></i>   Spremi zadatke </span></button>
+                        <button type="button" class="btn-default btn-lg" onclick="provjeriTaskove(); return false;"><span><i class="fa fa-check"></i>Spremi zadatke </span></button>
 
-                        <button type="button" class="btn-default btn-lg" onclick="closeActiveModal(); return false;"><span><i class="fa fa-remove"></i>   Zatvori</span>  </button>
-
+                        <button type="button" class="btn-default btn-lg" onclick="closeActiveModal(); return false;"><span><i class="fa fa-remove"></i>Zatvori</span>  </button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
-
-
-
-
-
     <div class="modal fade" id="bCard_modal">
         <div class="modal-dialog">
 
@@ -142,12 +113,9 @@
                 <div class="modal-header alert-success">
 
                     <h3>Business Card</h3>
-
                 </div>
 
-
                 <div class="modal-body">
-
                     <center>
                             [Ime]  [Prezime]
                         </center>
@@ -157,16 +125,13 @@
                         </center>
                 </div>
 
-
                 <div class="modal-footer">
 
                     <button type="button" class="btn-default btn-lg" onclick="closeActiveModal(); return false;"><span><i class="fa fa-remove"></i>Zatvori</span>  </button>
                 </div>
-
             </div>
         </div>
     </div>
-
 
     <div id="patrikovTemplate" style="display: none">
         <div data-odjel="[ODJEL]" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 portfolio-item">
@@ -181,6 +146,4 @@
             </div>
         </div>
     </div>
-
-
 </asp:Content>

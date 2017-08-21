@@ -18,7 +18,7 @@ function StvoriKartice() {
         console.log(JSON.stringify(data));
         $.each(data, function (key, val) {
             var element = $("#patrikovTemplate").html()
-                .replace("[ID]", val.Id)
+                .replace("[ID]", val.Id.toString())
                 .replace("[NAME_AND_SURNAME]", val.name + ' ' + val.surname)
                 .replace("[ODJEL_NAZIV]", val.odjel_naziv)
                 .replace("[COVER_IMAGE]", val.img_url)

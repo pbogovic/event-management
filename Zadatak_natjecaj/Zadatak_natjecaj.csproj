@@ -170,6 +170,7 @@
     <Compile Include="Content\SiteMaster.Master.designer.cs">
       <DependentUpon>SiteMaster.Master</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -184,6 +185,10 @@
     <Compile Include="Models\Tasks.cs" />
     <Compile Include="Models\ZapByDoB.cs" />
     <Compile Include="Models\ZapByOdjel.cs" />
+    <Compile Include="Models\Zavrsni\Category.cs" />
+    <Compile Include="Models\Zavrsni\Event.cs" />
+    <Compile Include="Models\Zavrsni\Task.cs" />
+    <Compile Include="Models\Zavrsni\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\zaposlenikController.cs" />
     <Compile Include="Models\Zaposlenik.cs" />

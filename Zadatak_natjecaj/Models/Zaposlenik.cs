@@ -23,6 +23,8 @@ namespace Zadatak_natjecaj
 
         public string info { get; set; }
 
+        public string img_url { get; set; }
+
         public string pic_url { get; set; }
 
         public string zadaci { get; set; }
