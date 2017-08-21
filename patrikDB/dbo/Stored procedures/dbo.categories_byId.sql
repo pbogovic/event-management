@@ -3,5 +3,5 @@
 	
 AS
 	SELECT * from categories 
-	where category_id = @param1
+	where Id = @param1
 

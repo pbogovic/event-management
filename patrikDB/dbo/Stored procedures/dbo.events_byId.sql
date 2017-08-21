@@ -3,5 +3,5 @@
 	
 AS
 	SELECT * from dbo.events
-	where event_id = @param1
+	where Id = @param1
 

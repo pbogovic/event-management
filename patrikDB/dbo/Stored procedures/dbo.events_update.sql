@@ -4,6 +4,6 @@
 	@param3 varchar(50)
 AS
 	update dbo.events
-	set event_description = @param2,
-	event_category = @param3
-	where event_id = @param1
+	set Description = @param2,
+	Id_category = @param3
+	where Id= @param1

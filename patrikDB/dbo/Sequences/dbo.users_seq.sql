@@ -1,4 +1,4 @@
-﻿CREATE SEQUENCE [dbo].[odjeli_seq]
+﻿CREATE SEQUENCE [dbo].[users_seq]
 		AS BIGINT
 		START WITH 1
 		INCREMENT BY 1

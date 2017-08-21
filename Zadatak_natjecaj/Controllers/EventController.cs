@@ -21,7 +21,7 @@ namespace Zadatak_natjecaj.Controllers
             {
                 using (myConnection)
                 {
-                    return myConnection.Query<Event>("[dbo].[PROMIJENI]", new { }, commandType: System.Data.CommandType.StoredProcedure);
+                    return myConnection.Query<Event>("[dbo].[events_getAll]", new { }, commandType: System.Data.CommandType.StoredProcedure);
                 };
             }
             catch (Exception ex)
@@ -38,7 +38,7 @@ namespace Zadatak_natjecaj.Controllers
             {
                 using (myConnection)
                 {
-                    myConnection.Execute("[dbo].[odjeli_update]", new { param1 = odjel.Id, param2 = odjel.Name }, commandType: System.Data.CommandType.StoredProcedure);
+                    myConnection.Execute("[dbo].[categories_update]", new { param1 = odjel.Id, param2 = odjel.Name }, commandType: System.Data.CommandType.StoredProcedure);
                 };
             }
             catch (Exception ex)
@@ -54,7 +54,7 @@ namespace Zadatak_natjecaj.Controllers
             {
                 using (myConnection)
                 {
-                    return myConnection.QueryFirstOrDefault<Event>("[dbo].[zaposlenici_byId]", new { param1 = id }, commandType: System.Data.CommandType.StoredProcedure);
+                    return myConnection.QueryFirstOrDefault<Event>("[dbo].[events_byId]", new { param1 = id }, commandType: System.Data.CommandType.StoredProcedure);
                 };
             }
             catch (Exception ex)
@@ -71,7 +71,7 @@ namespace Zadatak_natjecaj.Controllers
             {
                 using (myConnection)
                 {
-                    myConnection.Execute("[dbo].[odjeli_add]", new { param1 = odjel.Name }, commandType: System.Data.CommandType.StoredProcedure);
+                    myConnection.Execute("[dbo].[categories_add]", new { param1 = odjel.Name }, commandType: System.Data.CommandType.StoredProcedure);
                 };
             }
             catch (Exception ex)
@@ -81,13 +81,13 @@ namespace Zadatak_natjecaj.Controllers
         }
 
         [Route("api/category")]
-        public IEnumerable<Category> Get_Category()
+        public IEnumerable<Category> Get_All_Categories()
         {
             try
             {
                 using (myConnection)
                 {
-                    return myConnection.Query<Category>("[dbo].[PROMIJENI]", new { }, commandType: System.Data.CommandType.StoredProcedure);
+                    return myConnection.Query<Category>("[dbo].[categories_listAll]", new { }, commandType: System.Data.CommandType.StoredProcedure);
                 };
             }
             catch (Exception ex)
@@ -103,7 +103,7 @@ namespace Zadatak_natjecaj.Controllers
             {
                 using (myConnection)
                 {
-                    return myConnection.QueryFirstOrDefault<Category>("[dbo].[PROMIJENI]", new { param1 = category_id }, commandType: System.Data.CommandType.StoredProcedure);
+                    return myConnection.QueryFirstOrDefault<Category>("[dbo].[categories_byId]", new { param1 = category_id }, commandType: System.Data.CommandType.StoredProcedure);
                 };
             }
             catch (Exception ex)
@@ -119,7 +119,7 @@ namespace Zadatak_natjecaj.Controllers
             {
                 using (myConnection)
                 {
-                    return myConnection.Query<Task>("[dbo].[PROMIJENI]", new { param1 = event_id }, commandType: System.Data.CommandType.StoredProcedure);
+                    return myConnection.Query<Task>("[dbo].[tasks_get]", new { param1 = event_id }, commandType: System.Data.CommandType.StoredProcedure);
                 };
             }
             catch (Exception ex)
@@ -138,7 +138,7 @@ namespace Zadatak_natjecaj.Controllers
             {
                 using (myConnection)
                 {
-                    myConnection.Execute("[dbo].[insertEvent]", new { param1 = Event.Name, param2 = Event.Description, param3 = Event.Id_category }, commandType: System.Data.CommandType.StoredProcedure);
+                    myConnection.Execute("[dbo].[events_add]", new { param1 = Event.Name, param2 = Event.Description, param3 = Event.Id_category }, commandType: System.Data.CommandType.StoredProcedure);
                 };
             }
             catch (Exception ex)
@@ -156,7 +156,7 @@ namespace Zadatak_natjecaj.Controllers
             {
                 using (myConnection)
                 {
-                    myConnection.Execute("[dbo].[zaposlenici_update]", new { param1 = Event.Id, param2 = Event.Name, param3 = Event.Description, param4 = Event.Id_category }, commandType: System.Data.CommandType.StoredProcedure);
+                    myConnection.Execute("[dbo].[events_update]", new { param1 = Event.Id, param2 = Event.Name, param3 = Event.Description, param4 = Event.Id_category }, commandType: System.Data.CommandType.StoredProcedure);
                 };
             }
             catch (Exception ex)

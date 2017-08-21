@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[categories]
 (
-	[category_id] INT NOT NULL PRIMARY KEY, 
-    [category_name] VARCHAR(50) NOT NULL, 
-    [category_img] VARCHAR(50) NULL
+	[Id] INT NOT NULL PRIMARY KEY DEFAULT NEXT VALUE FOR [dbo].[categories_seq], 
+    [Name] VARCHAR(50) NOT NULL, 
+    [Img] VARCHAR(50) NULL
 )

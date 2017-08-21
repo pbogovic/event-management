@@ -3,6 +3,6 @@
 	
 AS
 	SELECT * from dbo.tasks 
-	where event_id = @param1
+	where Id_Event = @param1
 
 

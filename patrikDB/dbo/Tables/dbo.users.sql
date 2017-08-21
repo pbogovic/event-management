@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[users]
 (
-	[user_id] INT NOT NULL PRIMARY KEY, 
-    [user_name] VARCHAR(50) NULL, 
-    [user_surname] VARCHAR(50) NULL
+	[Id] INT NOT NULL PRIMARY KEY DEFAULT NEXT VALUE FOR [dbo].[users_seq], 
+    [Name] VARCHAR(50) NULL, 
+    [Surname] VARCHAR(50) NULL
 )

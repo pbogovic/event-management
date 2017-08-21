@@ -84,7 +84,7 @@ function OdjelProvjeriFormu() {
     if ($("#modal").isValid()) {
         $.post("api/category",
             {
-                odjel_naziv: $("#_odjelNaziv").val()
+                Name: $("#_odjelNaziv").val()
             }, function () {
                 getOdjeli();
             }

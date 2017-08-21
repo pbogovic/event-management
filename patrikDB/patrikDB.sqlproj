@@ -66,8 +66,8 @@
     <Folder Include="Snapshots" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Sequences\zaposlenici_seq.sql" />
-    <Build Include="dbo\Sequences\odjeli_seq.sql" />
+    <Build Include="dbo\Sequences\events_seq.sql" />
+    <Build Include="dbo\Sequences\categories_seq.sql" />
     <Build Include="dbo\Sequences\dbo.tasks_seq.sql" />
     <Build Include="dbo\Tables\dbo.categories.sql" />
     <Build Include="dbo\Tables\dbo.events.sql" />
@@ -83,6 +83,8 @@
     <Build Include="dbo\Stored procedures\dbo.tasks_add.sql" />
     <Build Include="dbo\Stored procedures\dbo.tasks_get.sql" />
     <Build Include="dbo\Stored procedures\dbo.tasks_update.sql" />
+    <Build Include="dbo\Stored procedures\dbo.categories_listAll.sql" />
+    <Build Include="dbo\Sequences\dbo.users_seq.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="patrikDB.refactorlog" />

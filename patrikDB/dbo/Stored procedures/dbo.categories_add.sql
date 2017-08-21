@@ -1,6 +1,5 @@
 ﻿CREATE PROCEDURE [dbo].[categories_add]
-	@param1 varchar(30),
-	@param2 varchar(50)
+	@param1 varchar(30)	
 AS
-	insert into dbo.categories(category_name, category_img) values(@param1, @param2)
+	insert into dbo.categories(Name) values(@param1)
 

@@ -1,11 +1,11 @@
 ﻿CREATE TABLE [dbo].[tasks]
 (
-	[event_id] INT NOT NULL , 
-    [task_id] INT NOT NULL DEFAULT NEXT VALUE FOR [dbo].[tasks_seq], 
-    [task_name] NVARCHAR(50) NOT NULL, 
-    [isComplete] BIT NOT NULL DEFAULT 0, 
-    PRIMARY KEY ([task_id], [event_id]),
+	[Id_Event] INT NOT NULL , 
+    [Id] INT NOT NULL DEFAULT NEXT VALUE FOR [dbo].[tasks_seq], 
+    [Name] NVARCHAR(50) NOT NULL, 
+    [IsComplete] BIT NOT NULL DEFAULT 0, 
+    PRIMARY KEY ([Id], [Id_Event]),
 
-	constraint event_id_FK Foreign key (event_id) references dbo.events(event_id)
+	constraint event_id_FK Foreign key ([Id_Event]) references dbo.events([Id])
 	
 )
