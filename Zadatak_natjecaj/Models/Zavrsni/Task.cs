@@ -11,12 +11,10 @@ namespace Zadatak_natjecaj.Models.Zavrsni
 
         public int Id_Event { get; set; }
 
-        public int Name { get; set; }
+        public string Name { get; set; }
 
         public bool IsComplete { get; set; }
 
         public int Rbr { get; set; }
-
-        public List<int> Zadaci { get; set; }
     }
 }

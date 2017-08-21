@@ -11,7 +11,7 @@
     })
 
     //console.log(JSON.stringify(mojiTaskovi));ž
-    $.post("api/zaposlenici/alterTasks", { zadaci: mojiTaskovi });
+    $.post("api/tasks/alterTasks", { zadaci: mojiTaskovi });
 
     closeActiveModal();
 
@@ -19,7 +19,7 @@
 }
 
 function StvoriKartice() {
-    $.getJSON("api/zaposlenici/listall", function (data: Models.Old.Zaposlenik[]) {
+    $.getJSON("api/events/listall", function (data: Models.Event[]) {
         $("#galerija").empty();
 
         console.log(JSON.stringify(data));
@@ -27,27 +27,27 @@ function StvoriKartice() {
         $.each(data, function (key, val) {
             var element = $("#patrikovTemplate").html()
                 .replace("[ID]", val.Id.toString())
-                .replace("[NAME_AND_SURNAME]", val.name + ' ' + val.surname)
-                .replace("[ODJEL_NAZIV]", val.odjel_naziv)
-                .replace("[COVER_IMAGE]", val.img_url)
-                .replace("[EMPLOYEE_IMAGE]", val.pic_url)
-                .replace("[ODJEL]", val.odjel_naziv);
+                .replace("[NAME_AND_SURNAME]", val.Name)
+                .replace("[ODJEL_NAZIV]", val.Description)
+                .replace("[COVER_IMAGE]", val.Category_Img_url)
+                .replace("[EMPLOYEE_IMAGE]", val.CreatedBy_Img_url)
+                .replace("[ODJEL]", val.Category_Name);
 
             $("#galerija").append(element);
         });
     });
 }
 
-function getTasks(id_Zaposlenik: number) {
+function getTasks(id_event: number) {
     $("#tasks").empty();
 
-    $("#tasks_idHolder").val(id_Zaposlenik);
+    $("#tasks_idHolder").val(id_event);
 
     $("#new_task").val("");
 
-    $.getJSON("api/zaposlenici/getTasks/" + id_Zaposlenik, function (data) {
+    $.getJSON("api/zaposlenici/getTasks/" + id_event, function (data: Models.Task[]) {
         $.each(data, function (key, val) {
-            var redak = '<span ident = "0" ><input data-rbr="' + val.rbr + '" id_zaposlenik= "' + id_Zaposlenik + '" type ="checkbox" ' + isChecked(val.isComplete) + '/>' + ' ' + val.zadatak_naslov + '<br/><br/></span>';
+            var redak = '<span ident = "0" ><input data-rbr="' + val.Id + '" id_zaposlenik= "' + id_event + '" type ="checkbox" ' + isChecked(val.IsComplete) + '/>' + ' ' + val.Name + '<br/><br/></span>';
 
             $("#tasks").append(redak);
         })
@@ -118,10 +118,10 @@ $(function () {
         }
     })
 
-    $.getJSON("api/zaposlenici/listOdjel", function (data) {
+    $.getJSON("api/category", function (data: Models.Category[]) {
         $.each(data, function (key, val) {
-            var opcija = "<option value='" + val.odjel_id + "'>" + val.odjel_naziv + "</option>"
-            var opcija2 = "<option value='" + val.odjel_naziv + "'>" + val.odjel_naziv + "</option>"
+            var opcija = "<option value='" + val.Name + "'>" + val.Name + "</option>"
+            var opcija2 = "<option value='" + val.Name + "'>" + val.Name + "</option>"
 
             $("#odjel_id_add").append(opcija);
             $("#odjel_id_alter").append(opcija);

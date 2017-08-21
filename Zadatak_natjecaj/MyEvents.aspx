@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Content/SiteMaster.Master" AutoEventWireup="true" CodeBehind="zaposlenici.aspx.cs" Inherits="Zadatak_natjecaj.zaposleniciM" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Content/SiteMaster.Master" AutoEventWireup="true" CodeBehind="MyEvents.aspx.cs" Inherits="Zadatak_natjecaj.zaposleniciM" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentHead" runat="server">
-    <script src="../Scripts/zaposlenici.js"></script>
+    <script src="MyEvents.js"></script>
 
     <style>
         .team {

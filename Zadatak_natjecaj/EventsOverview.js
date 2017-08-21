@@ -1,0 +1,104 @@
+var tableRef = null;
+//test
+$(function () {
+    tableRef = $("#tableZaposlenici").DataTable({
+        data: [],
+        columns: [
+            { data: 'Name', title: "Naziv" },
+            { data: 'Category_Name', title: "Kategorija" },
+            { data: 'Description', title: "Opis" },
+            { title: 'Stvorio', render: function (coldata, colType, row) { return row.CreatedBy_Name + " " + row.CreatedBy_Surname; } },
+            { data: 'Id', title: 'Mijenjaj', render: function (data) { return "<input type ='button' value='Promijeni' onclick='ZaposleniciGetByid(" + data + ")' >"; } },
+            { data: 'Id', title: "Brisi", render: function (data) { return "<input type='button' value ='Brisi' onclick='ZaposleniciDelete(" + data + ")'>"; } }
+        ]
+    });
+    $("#_dob").datepicker({ dateFormat: "yy-mm-dd" });
+    $("#alt_dob").datepicker({ dateFormat: "yy-mm-dd" });
+    $("#odjel_id_filter").on("change", function () {
+        tableRef.search($("#odjel_id_filter").val());
+        tableRef.draw();
+    });
+    $("#dodaj").click(function () {
+        $("#modal").modal();
+        $("#modal").find("input[type=text]").val("");
+    });
+    $("#izmjeni").click(function () {
+        $("#modal").modal();
+        $("#modal_form").find("input[type=text]").val("");
+    });
+    $.getJSON("api/category", function (data) {
+        $.each(data, function (key, val) {
+            var opcija = "<option value='" + val.Id + "'>" + val.Name + "</option>";
+            var opcija2 = "<option value='" + val.Name + "'>" + val.Name + "</option>";
+            $("#odjel_id_add").append(opcija);
+            $("#odjel_id_alter").append(opcija);
+            $("#odjel_id_filter").append(opcija2);
+        });
+    });
+    ZaposleniciGet();
+});
+function ZaposleniciGet() {
+    $.getJSON("api/events/listall", function (data) {
+        tableRef.clear();
+        tableRef.rows.add(data);
+        tableRef.draw();
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+}
+function ZaposleniciGetByid(idEvent) {
+    $.getJSON("api/events/" + idEvent, function (data) {
+        $("#modal_alter").modal();
+        $("#alt_name").val(data.Name);
+        $("#alt_surname").val(data.Description);
+        $("#idHolder").val(data.Id);
+        $("#odjel_id_alter").val(data.Id_category);
+    });
+}
+function ZaposleniciDelete(idZaposlenik) {
+    console.log("Odkomentiraj funkciju");
+    /*
+
+    $.get("api/zaposlenici/remove/" + idZaposlenik,
+        function () {
+           ZaposleniciGet();
+        },
+    )
+
+    */
+}
+function ZaposleniciProvjeriFormu() {
+    if ($("#modal").isValid()) {
+        $.post("api/event/add", {
+            name: $("#_name").val(),
+            Description: $("#_surname").val(),
+            Id_category: $("#odjel_id_add").val(),
+        }, function () {
+            ZaposleniciGet();
+        });
+        alert("SPREMLJENO!");
+        closeActiveModals();
+    }
+}
+function ZaposleniciProvjeriFormu_alter() {
+    if ($("#modal_alter").isValid()) {
+        $.post("api/event/update", {
+            id: $("#idHolder").val(),
+            name: $("#alt_name").val(),
+            Description: $("#alt_surname").val(),
+            Id_category: $("#odjel_id_alter").val(),
+        }, function () {
+            ZaposleniciGet();
+        });
+        alert("Podaci Izmijenjeni!");
+        closeActiveModals();
+    }
+}
+function closeActiveModals() {
+    $("body").find("div[role=dialog].in").first().modal("hide");
+}
+function progress(data) {
+    var izvrseni = null;
+    var ukupni = null;
+    return '78879';
+}
+//# sourceMappingURL=EventsOverview.js.map

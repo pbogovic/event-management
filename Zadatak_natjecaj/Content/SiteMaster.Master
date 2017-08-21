@@ -16,11 +16,10 @@
     <script src="../Scripts/jquery-3.2.1.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js" type="text/javascript"></script>
     <script src="../Scripts/jquery.form-validator.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>
-
 
     <style>
         body {
@@ -68,49 +67,41 @@
             line-height: 20px;
         }
 
-        .btn-lg{
+        .btn-lg {
             font-size: 14px;
         }
 
-        .col-sm-4{
-            text-align:right;
+        .col-sm-4 {
+            text-align: right;
         }
 
-        .fa-plus-circle{
-
+        .fa-plus-circle {
             color: green;
-            cursor:pointer;
+            cursor: pointer;
         }
 
-        .fa-remove{
-            
+        .fa-remove {
         }
 
-        .fa-check{
-            
+        .fa-check {
         }
 
-        div.cover{
+        div.cover {
             min-height: 200px !important;
         }
 
-        .team{
-
+        .team {
             padding-bottom: 40px;
-
         }
 
-        .team .title{
+            .team .title {
+                margin: 25px 0 !important;
+            }
 
-            margin: 25px 0 !important;
+        .ui-datepicker {
+            z-index: 11151 !important;
         }
-
-
-        .ui-datepicker{z-index:11151 !important;}
-
-
     </style>
-
 
     <asp:ContentPlaceHolder ID="ContentHead" runat="server">
     </asp:ContentPlaceHolder>
@@ -118,42 +109,26 @@
 <body class="index light-yellow">
     <form id="form1" runat="server">
         <div>
-
-
-
-
             <div id="navigacija">
-
                 <div class="container">
-
-
                     <nav class="navbar navbar-inverse" role="navigation">
                         <div class="navbar-header">
-                            <a class="navbar-brand" href="../zaposlenici.aspx">
-
+                            <a class="navbar-brand" href="../MyEvents.aspx">
                                 <img height="45" width="45" src="../Images/Aperture_Science.png" />
-
                             </a>
                         </div>
                         <div>
-
                             <ul class="nav navbar-nav">
-                                <li><a href="../zaposlenici.aspx">Pregled zaposlenika </a></li>
-                                <li><a href="../administracijaZaposlenika.aspx">Administracija zaposlenika</a></li>
-                                <li><a href="../administracijaOdjela.aspx">Administracija odjela</a></li>
-                                <li><a href="../Izvjestaj.aspx">Izvještaj</a></li>
-                                
-                                
+                                <li><a href="../MyEvents.aspx">Moji događaji </a></li>
+                                <li><a href="../EventsOverview.aspx">Upravljanje mojim događajima</a></li>
+                                <li><a href="../Administration.aspx">Administriranje</a></li>
                             </ul>
                         </div>
-
                     </nav>
                 </div>
             </div>
-
             <asp:ContentPlaceHolder ID="ContentBody" runat="server">
             </asp:ContentPlaceHolder>
-
         </div>
     </form>
 </body>

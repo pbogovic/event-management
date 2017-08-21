@@ -1,10 +1,6 @@
-﻿
-CREATE PROCEDURE [dbo].[tasks_add]
-	@param1 int,
-	@param2 varchar(50)
-	
+﻿CREATE PROCEDURE [dbo].[tasks_add]
+	@param1 int = 0,
+	@param2 int
 AS
-	Insert into dbo.zaposlenici_tasks(id_zaposlenik, zadatak_naslov) 
-			Values(@param1, @param2)
-	
-
+	SELECT @param1, @param2
+RETURN 0

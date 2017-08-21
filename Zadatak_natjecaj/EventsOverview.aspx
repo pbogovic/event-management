@@ -1,89 +1,46 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Content/SiteMaster.Master" AutoEventWireup="true" CodeBehind="administracijaZaposlenika.aspx.cs" Inherits="Zadatak_natjecaj.administracijaZaposlenikaM" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Content/SiteMaster.Master" AutoEventWireup="true" CodeBehind="EventsOverview.aspx.cs" Inherits="Zadatak_natjecaj.administracijaZaposlenikaM" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentHead" runat="server">
 
-    <script src="Scripts/AdministracijaZaposlenici.js"></script>
-
+    <script src="EventsOverview.js"></script>
 
     <style>
-      
-
     </style>
-
 </asp:Content>
-
-
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentBody" runat="server">
 
-
     <section id="services">
-
         <div class="container">
-
-
             <div class="row text-center">
-
                 <h1>Administracija Zaposlenika</h1>
-
             </div>
-
-
-
-
             <div class="row">
-
-
-
                 <table id="tableZaposlenici" class="display">
                 </table>
-
             </div>
-
-
             <div>
                 <div id="bottom" class="row">
-
                     <input id="dodaj" type="button" value="Dodaj zaposlenika" class="btn-default btn-lg" />
-
                 </div>
             </div>
-
         </div>
-
     </section>
-
-
-
     <div class="modal fade" id="modal" role="dialog">
-
         <div id="modalHead" class="modal-dialog">
-
             <div class=" modal-content">
-
                 <div class="modal-header">
-
                     <h3>Dodaj zaposlenika</h3>
-
                 </div>
-
-
-
                 <div class="modal-body">
-
                     <div class="container">
-
                         <div class="modal_formGroup">
-
                             <label class="col-sm-4 control-label" for="_name">Ime</label>
-
                             <div class="col-sm-8">
                                 <input data-validation="required" id="_name" type="text" class="modal_form" maxlength="30" />
                             </div>
                         </div>
-
                         <div class="modal_formGroup">
-
                             <label class="col-sm-4 control-label" for="_surname">Prezime</label>
                             <div class="col-sm-8">
                                 <input data-validation="required" id="_surname" type="text" class="modal_form" maxlength="30" />
@@ -92,7 +49,6 @@
 
                         <div class="modal_formGroup">
                             <label class="col-sm-4 control-label" for="_dob">Datum rođenja</label>
-
                             <div class="col-sm-8">
                                 <input data-validation="required" name="dateInput" id="_dob" type="text" class="modal_form" data-validation="date" data-validation-format="yyyy-mm-dd" />
                             </div>
@@ -113,30 +69,18 @@
                                 </select>
                             </div>
                         </div>
-
                     </div>
-
                 </div>
 
                 <div class="modal-footer">
 
-                     <button  type="button" class="btn-default btn-lg" onclick="ZaposleniciProvjeriFormu(); return false;"><span><i class="fa fa-check"></i>   Spremi </span>  </button>
-                                        
-                    <button  type="button" class="btn-default btn-lg" onclick="closeActiveModals(); return false;"><span><i class="fa fa-remove"></i>  Zatvori</span>  </button>
-                    
+                    <button type="button" class="btn-default btn-lg" onclick="ZaposleniciProvjeriFormu(); return false;"><span><i class="fa fa-check"></i>Spremi </span></button>
 
-
+                    <button type="button" class="btn-default btn-lg" onclick="closeActiveModals(); return false;"><span><i class="fa fa-remove"></i>Zatvori</span>  </button>
                 </div>
-
-
             </div>
-
         </div>
-
     </div>
-
-
-
 
     <div class="modal fade" id="modal_alter" role="dialog">
 
@@ -147,9 +91,7 @@
                 <div class="modal-header">
 
                     <h3>Izmijeni zaposlenika</h3>
-
                 </div>
-
 
                 <div class="modal-body">
 
@@ -181,7 +123,6 @@
                             </div>
                         </div>
 
-
                         <div class="modal_formGroup">
                             <label class="col-sm-4 control-label" for="placa_alter">Plaća</label>
 
@@ -199,30 +140,18 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 <div class="modal-footer">
 
-                    
-
                     <!--  <input id="modal_alter_submit" class="btn-default btn-lg" type="submit" value="Spremi" onclick="Zaposlenici_ProvjeriFormu_alter(); return false;" />
                    -->
-                   <button  type="button" class="btn-default btn-lg" onclick="ZaposleniciProvjeriFormu_alter(); return false;"><span><i class="fa fa-check"></i>   Spremi </span>  </button>
-                    
-                     
-
+                    <button type="button" class="btn-default btn-lg" onclick="ZaposleniciProvjeriFormu_alter(); return false;"><span><i class="fa fa-check"></i>Spremi </span></button>
 
                     <!-- <input class="btn-default btn-lg" type="submit" value="Zatvori" onclick="closeActiveModal(); return false;" /> -->
-                    <button  type="button" class="btn-default btn-lg" onclick="closeActiveModal(); return false;"><span><i class="fa fa-remove"></i>   Zatvori</span>  </button>
-                    
-
+                    <button type="button" class="btn-default btn-lg" onclick="closeActiveModal(); return false;"><span><i class="fa fa-remove"></i>Zatvori</span>  </button>
                 </div>
-
-
             </div>
         </div>
     </div>
-
-
 </asp:Content>

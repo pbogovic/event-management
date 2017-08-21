@@ -66,28 +66,23 @@
     <Folder Include="Snapshots" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\zaposlenici.sql" />
     <Build Include="dbo\Sequences\zaposlenici_seq.sql" />
-    <Build Include="dbo\Stored procedures\dbo.zaposlenici_ListAll.sql" />
-    <Build Include="dbo\Stored procedures\dbo.zaposlenici_byId.sql" />
-    <Build Include="dbo\Stored procedures\dbo.insertEmployee.sql" />
-    <Build Include="dbo\Stored procedures\dbo.zaposlenici_update.sql" />
-    <Build Include="dbo\Tables\dbo.odjeli.sql" />
     <Build Include="dbo\Sequences\odjeli_seq.sql" />
-    <Build Include="dbo\Stored procedures\dbo.odjeli_listAllWithInfo.sql" />
-    <Build Include="dbo\Stored procedures\dbo.zaposlenici_delete.sql" />
-    <Build Include="dbo\Stored procedures\dbo.listFiltered.sql" />
-    <Build Include="dbo\Tables\dbo.zaposlenici_tasks.sql" />
-    <Build Include="dbo\Stored procedures\dbo.zaposlenici_listTasks.sql" />
-    <Build Include="dbo\Stored procedures\dbo.tasks_update.sql" />
-    <Build Include="dbo\Stored procedures\dbo.odjeli_byID.sql" />
-    <Build Include="dbo\Stored procedures\dbo.odjeli_update.sql" />
-    <Build Include="dbo\Stored procedures\dbo.odjeli_add.sql" />
     <Build Include="dbo\Sequences\dbo.tasks_seq.sql" />
+    <Build Include="dbo\Tables\dbo.categories.sql" />
+    <Build Include="dbo\Tables\dbo.events.sql" />
+    <Build Include="dbo\Tables\dbo.tasks.sql" />
+    <Build Include="dbo\Tables\dbo.users.sql" />
+    <Build Include="dbo\Stored procedures\dbo.categories_add.sql" />
+    <Build Include="dbo\Stored procedures\dbo.categories_byId.sql" />
+    <Build Include="dbo\Stored procedures\dbo.categories_update.sql" />
+    <Build Include="dbo\Stored procedures\dbo.events_add.sql" />
+    <Build Include="dbo\Stored procedures\dbo.events_byId.sql" />
+    <Build Include="dbo\Stored procedures\dbo.events_getAll.sql" />
+    <Build Include="dbo\Stored procedures\dbo.events_update.sql" />
     <Build Include="dbo\Stored procedures\dbo.tasks_add.sql" />
-    <Build Include="dbo\Stored procedures\dbo.izvjestaj.zapByOdjel.sql" />
-    <Build Include="dbo\Stored procedures\dbo.izvjestaj_zapByDoB.sql" />
-    <Build Include="dbo\Stored procedures\dbo.odjeli_listAll.sql" />
+    <Build Include="dbo\Stored procedures\dbo.tasks_get.sql" />
+    <Build Include="dbo\Stored procedures\dbo.tasks_update.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="patrikDB.refactorlog" />

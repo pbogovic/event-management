@@ -100,8 +100,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="administracijaOdjela.aspx" />
-    <Content Include="administracijaZaposlenika.aspx" />
+    <Content Include="Administration.aspx" />
+    <Content Include="EventsOverview.aspx" />
     <Content Include="Css\agency.css" />
     <Content Include="font-awesome-4.7.0\css\font-awesome.css" />
     <Content Include="font-awesome-4.7.0\css\font-awesome.min.css" />
@@ -110,8 +110,7 @@
     <Content Include="Images\Aperture_Science.png" />
     <Content Include="Images\plus_icon.png" />
     <TypeScriptCompile Include="Models\Models.ts" />
-    <TypeScriptCompile Include="Scripts\AdministracijaZaposlenici.ts" />
-    <Content Include="Izvjestaj.aspx" />
+    <TypeScriptCompile Include="EventsOverview.ts" />
     <Content Include="Scripts\agency.js" />
     <Content Include="Scripts\agency.min.js" />
     <Content Include="Images\zaposlenik7.jpg" />
@@ -134,7 +133,6 @@
     <Content Include="Images\zaposlenik3.jpg" />
     <Content Include="Images\zaposlenik4.jpg" />
     <Content Include="Images\zaposlenik6.jpg" />
-    <Content Include="Scripts\Izvjestaj.js" />
     <Content Include="Scripts\jquery-3.2.1.min.js">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -143,23 +141,23 @@
     <Content Include="Css\Zadatakcss.css" />
     <TypeScriptCompile Include="Scripts\Izvjestaj_bad.ts" />
     <TypeScriptCompile Include="Scripts\typings\chartjs\index.d.ts" />
-    <TypeScriptCompile Include="Scripts\zaposlenici.ts" />
-    <Content Include="zaposlenici.aspx" />
+    <TypeScriptCompile Include="MyEvents.ts" />
+    <Content Include="MyEvents.aspx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="administracijaOdjela.aspx.cs">
-      <DependentUpon>administracijaOdjela.aspx</DependentUpon>
+    <Compile Include="Administration.aspx.cs">
+      <DependentUpon>Administration.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="administracijaOdjela.aspx.designer.cs">
-      <DependentUpon>administracijaOdjela.aspx</DependentUpon>
+    <Compile Include="Administration.aspx.designer.cs">
+      <DependentUpon>Administration.aspx</DependentUpon>
     </Compile>
-    <Compile Include="administracijaZaposlenika.aspx.cs">
-      <DependentUpon>administracijaZaposlenika.aspx</DependentUpon>
+    <Compile Include="EventsOverview.aspx.cs">
+      <DependentUpon>EventsOverview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="administracijaZaposlenika.aspx.designer.cs">
-      <DependentUpon>administracijaZaposlenika.aspx</DependentUpon>
+    <Compile Include="EventsOverview.aspx.designer.cs">
+      <DependentUpon>EventsOverview.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -174,13 +172,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Izvjestaj.aspx.cs">
-      <DependentUpon>Izvjestaj.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Izvjestaj.aspx.designer.cs">
-      <DependentUpon>Izvjestaj.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Models\Odjel.cs" />
     <Compile Include="Models\Tasks.cs" />
     <Compile Include="Models\ZapByDoB.cs" />
@@ -192,12 +183,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\zaposlenikController.cs" />
     <Compile Include="Models\Zaposlenik.cs" />
-    <Compile Include="zaposlenici.aspx.cs">
-      <DependentUpon>zaposlenici.aspx</DependentUpon>
+    <Compile Include="MyEvents.aspx.cs">
+      <DependentUpon>MyEvents.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="zaposlenici.aspx.designer.cs">
-      <DependentUpon>zaposlenici.aspx</DependentUpon>
+    <Compile Include="MyEvents.aspx.designer.cs">
+      <DependentUpon>MyEvents.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -248,7 +239,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\administracijaOdjela.ts" />
+    <TypeScriptCompile Include="Administration.ts" />
     <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
   </ItemGroup>
   <ItemGroup>

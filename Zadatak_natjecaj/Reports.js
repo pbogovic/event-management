@@ -1,10 +1,8 @@
-﻿
-let pieGrafLabels = [];
+﻿let pieGrafLabels = [];
 
-let pieGrafData = [];     
+let pieGrafData = [];
 
 let pieGrafColors = ["0F434F", "447884"];
-
 
 let chartGrafLabels = [];
 
@@ -15,36 +13,22 @@ let chartGrafColors = "0F434F";
 let ctx = null;
 let chart = null;
 
-var ctx2 = null; 
+var ctx2 = null;
 var chart2 = null;
-
 
 function randomColor() {
     var hue = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
     return hue;
 }
 
-
-
-
 $(document).ready(function () {
-
-
-
-
-
     $.getJSON("api/izvjestaj/zapByOdjel", function (data) {
-
-       
-
         $(data).each(function (index, elem) {
-
-           // console.log(elem.brZap +"   " + elem.odjel_naziv);
+            // console.log(elem.brZap +"   " + elem.odjel_naziv);
 
             pieGrafData.push(elem.brZap);
 
-            pieGrafLabels.push(elem.odjel_naziv)          
-
+            pieGrafLabels.push(elem.odjel_naziv)
         })
 
         console.log(pieGrafLabels.toString() + "\n" + pieGrafData.toString() + "\n" + pieGrafColors.toString());
@@ -77,32 +61,23 @@ $(document).ready(function () {
                     }
                 },
 
-                title:{
-
+                title: {
                     text: "Zaposlenici po odjelima",
                     display: true,
-
                 },
-
-
 
                 responsive: true,
 
                 maintainAspectRatio: false,
-
             }
-        });  
-
+        });
     });
 
     $.getJSON("api/izvjestaj/zapByDoB", function (data) {
-
-        $(data).each(function (index, elem) {           
-
+        $(data).each(function (index, elem) {
             chartGrafData.push(elem.brZap);
 
-            chartGrafLabels.push(elem.yearGroup);          
-
+            chartGrafLabels.push(elem.yearGroup);
         })
 
         console.log(chartGrafLabels.toString() + "\n" + chartGrafData.toString() + "\n" + chartGrafColors.toString());
@@ -132,20 +107,16 @@ $(document).ready(function () {
                         top: 15,
                         bottom: 15
                     }
-
                 },
                 scales: {
                     yAxes: [{
-
                         ticks: {
                             beginAtZero: true
                         }
-
                     }]
                 },
 
                 title: {
-
                     text: "Prikaz zaposlenika po godini rođenja",
                     display: true
                 },
@@ -153,23 +124,7 @@ $(document).ready(function () {
                 responsive: true,
 
                 maintainAspectRatio: false,
-
-
             }
         });
-
     })
-
-
-
-    
-
-
-   
-
-
-        
-
 });
-
-

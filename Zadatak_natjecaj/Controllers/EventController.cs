@@ -12,7 +12,7 @@ namespace Zadatak_natjecaj.Controllers
 {
     public class EventController : ApiController
     {
-        public SqlConnection myConnection = new SqlConnection("Server=tcp:sqlserver-fat-we.database.windows.net,1433;Initial Catalog=patrikdemobase;Persist Security Info=False;User ID=EventProtectFATAdmin;Password=Goldenfazha1!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+        public SqlConnection myConnection = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=em-Master;Integrated Security=True;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
         [Route("api/events/listall")]
         public IEnumerable<Event> GetAll()
@@ -30,7 +30,24 @@ namespace Zadatak_natjecaj.Controllers
             }
         }
 
-        [Route("api/Events/listall")]
+        [Route("api/category/update")]
+        [HttpPost]
+        public void odjeli_update(Category odjel)
+        {
+            try
+            {
+                using (myConnection)
+                {
+                    myConnection.Execute("[dbo].[odjeli_update]", new { param1 = odjel.Id, param2 = odjel.Name }, commandType: System.Data.CommandType.StoredProcedure);
+                };
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        [Route("api/events/")]
         public Event Get(int id)
         {
             try
@@ -46,7 +63,24 @@ namespace Zadatak_natjecaj.Controllers
             }
         }
 
-        [Route("api/Category/listCategory")]
+        [Route("api/category")]
+        [HttpPost]
+        public void odjeli_add(Category odjel)
+        {
+            try
+            {
+                using (myConnection)
+                {
+                    myConnection.Execute("[dbo].[odjeli_add]", new { param1 = odjel.Name }, commandType: System.Data.CommandType.StoredProcedure);
+                };
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
+
+        [Route("api/category")]
         public IEnumerable<Category> Get_Category()
         {
             try
@@ -62,7 +96,7 @@ namespace Zadatak_natjecaj.Controllers
             }
         }
 
-        [Route("api/Category/{odjel_id}")]
+        [Route("api/category/{odjel_id}")]
         public Category Get_CategoryByID(int category_id)
         {
             try
@@ -96,7 +130,7 @@ namespace Zadatak_natjecaj.Controllers
 
         // -------------------------------------------------------------------------------------------------------------------------------
 
-        [Route("api/Event/add")]
+        [Route("api/event/add")]
         [HttpPost]
         public void post(Event Event)
         {
@@ -113,7 +147,7 @@ namespace Zadatak_natjecaj.Controllers
             }
         }
 
-        [Route("api/Event/update")]
+        [Route("api/event/update")]
         [HttpPost]
         public void update(Event Event)
         {
@@ -123,40 +157,6 @@ namespace Zadatak_natjecaj.Controllers
                 using (myConnection)
                 {
                     myConnection.Execute("[dbo].[zaposlenici_update]", new { param1 = Event.Id, param2 = Event.Name, param3 = Event.Description, param4 = Event.Id_category }, commandType: System.Data.CommandType.StoredProcedure);
-                };
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-        }
-
-        [Route("api/odjeli/add")]
-        [HttpPost]
-        public void odjeli_add(Odjel odjel)
-        {
-            try
-            {
-                using (myConnection)
-                {
-                    myConnection.Execute("[dbo].[odjeli_add]", new { param1 = odjel.odjel_naziv }, commandType: System.Data.CommandType.StoredProcedure);
-                };
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-        }
-
-        [Route("api/odjeli/update")]
-        [HttpPost]
-        public void odjeli_update(Odjel odjel)
-        {
-            try
-            {
-                using (myConnection)
-                {
-                    myConnection.Execute("[dbo].[odjeli_update]", new { param1 = odjel.odjel_id, param2 = odjel.odjel_naziv }, commandType: System.Data.CommandType.StoredProcedure);
                 };
             }
             catch (Exception ex)
