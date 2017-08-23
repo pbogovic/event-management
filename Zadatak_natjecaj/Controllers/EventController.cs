@@ -47,14 +47,15 @@ namespace Zadatak_natjecaj.Controllers
             }
         }
 
-        [Route("api/events/")]
-        public Event Get(int id)
+        [Route("api/events/{idEvent}")]
+        [HttpGet]
+        public Event Get(int idEvent)
         {
             try
             {
                 using (myConnection)
                 {
-                    return myConnection.QueryFirstOrDefault<Event>("[dbo].[events_byId]", new { param1 = id }, commandType: System.Data.CommandType.StoredProcedure);
+                    return myConnection.QueryFirstOrDefault<Event>("[dbo].[events_byId]", new { param1 = idEvent }, commandType: System.Data.CommandType.StoredProcedure);
                 };
             }
             catch (Exception ex)
@@ -96,7 +97,8 @@ namespace Zadatak_natjecaj.Controllers
             }
         }
 
-        [Route("api/category/{odjel_id}")]
+        [Route("api/category/{category_id}")]
+        [HttpGet]
         public Category Get_CategoryByID(int category_id)
         {
             try
@@ -143,7 +145,7 @@ namespace Zadatak_natjecaj.Controllers
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 

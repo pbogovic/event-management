@@ -48,21 +48,6 @@
                         </div>
 
                         <div class="modal_formGroup">
-                            <label class="col-sm-4 control-label" for="_dob">Datum rođenja</label>
-                            <div class="col-sm-8">
-                                <input data-validation="required" name="dateInput" id="_dob" type="text" class="modal_form" data-validation="date" data-validation-format="yyyy-mm-dd" />
-                            </div>
-                        </div>
-
-                        <div class="modal_formGroup">
-                            <label class="col-sm-4 control-label" for="placa_add">Plaća</label>
-
-                            <div class="col-sm-8">
-                                <input data-validation="number" id="placa_add" type="text" class="modal_form" />
-                            </div>
-                        </div>
-
-                        <div class="modal_formGroup">
                             <label class="col-sm-4 control-label" for="odjel_id_add">Odjel</label>
                             <div class="col-sm-8">
                                 <select id="odjel_id_add" class="modal_form">
@@ -116,22 +101,6 @@
                         </div>
 
                         <div class="modal_formGroup">
-                            <label class="col-sm-4 control-label" for="_dob">Datum rođenja</label>
-
-                            <div class="col-sm-8">
-                                <input data-validation="required" name="alt_dateInput" id="alt_dob" type="text" class="modal_form" data-validation="date" data-validation-format="yyyy-mm-dd" placeholder="Click me" />
-                            </div>
-                        </div>
-
-                        <div class="modal_formGroup">
-                            <label class="col-sm-4 control-label" for="placa_alter">Plaća</label>
-
-                            <div class="col-sm-8">
-                                <input data-validation="number" id="placa_alter" type="text" class="modal_form" />
-                            </div>
-                        </div>
-
-                        <div class="modal_formGroup">
                             <label class="col-sm-4 control-label" for="odjel_id_alter">Odjel</label>
 
                             <div class="col-sm-8">
@@ -149,7 +118,7 @@
                     <button type="button" class="btn-default btn-lg" onclick="ZaposleniciProvjeriFormu_alter(); return false;"><span><i class="fa fa-check"></i>Spremi </span></button>
 
                     <!-- <input class="btn-default btn-lg" type="submit" value="Zatvori" onclick="closeActiveModal(); return false;" /> -->
-                    <button type="button" class="btn-default btn-lg" onclick="closeActiveModal(); return false;"><span><i class="fa fa-remove"></i>Zatvori</span>  </button>
+                    <button type="button" class="btn-default btn-lg" onclick="closeActiveModals(); return false;"><span><i class="fa fa-remove"></i>Zatvori</span>  </button>
                 </div>
             </div>
         </div>

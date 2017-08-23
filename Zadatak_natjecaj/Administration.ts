@@ -7,7 +7,7 @@ $(function () {
         data: [],
         columns: [
             { data: 'Name', title: "Naziv" },
-            { data: 'Id', title: 'Mijenjaj', render: function (data) { return "<input type ='button' value='Promijeni' onclick='getByid(" + data + ")' >" } },
+            { data: 'Id', title: 'Mijenjaj', render: function (data) { return "<input type ='button' value='Promijeni' onclick='getCategory(" + data + ")' >" } },
             { data: 'Id', title: "Brisi", render: function (data) { return "<input type='button' value ='Brisi' onclick='deleteEmployee(" + data + ")'>" } }
 
         ]
@@ -31,7 +31,7 @@ $(function () {
         $("#modal_alter").find("input[type=text]").val("");
     })
 
-    $.getJSON("api/zaposlenici/listOdjel", function (data) {
+    $.getJSON("api/category", function (data) {
         $.each(data, function (key, val) {
             var opcija = "<option value='" + val.odjel_id + "'>" + val.odjel_naziv + "</option>"
             var opcija2 = "<option value='" + val.odjel_naziv + "'>" + val.odjel_naziv + "</option>"
@@ -55,15 +55,15 @@ function getOdjeli() {
     })
 }
 
-function getOdjelByid(idOdjel: number) {
-    $.getJSON("api/category/" + idOdjel, function (data) {
+function getCategory(idOdjel: number) {
+    $.getJSON("api/category/" + idOdjel, function (data: Models.Category) {
         console.log(data);
 
         $("#modal_alter").modal();
 
-        $("#alt_odjelNaziv").val(data.odjel_naziv);
+        $("#alt_odjelNaziv").val(data.Name);
 
-        $("#idHolder").val(data.odjel_id);
+        $("#idHolder").val(data.Id);
     })
 }
 
@@ -100,8 +100,8 @@ function OdjelProvjeriFormu_alter() {
     if ($("#modal_alter").isValid()) {
         $.post("api/category/update",
             {
-                odjel_id: $("#idHolder").val(),
-                odjel_naziv: $("#alt_odjelNaziv").val()
+                Id: $("#idHolder").val(),
+                Name: $("#alt_odjelNaziv").val()
             }, function () {
                 getOdjeli();
             }

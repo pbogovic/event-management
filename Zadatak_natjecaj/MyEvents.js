@@ -28,13 +28,13 @@ function StvoriKartice() {
         });
     });
 }
-function getTasks(id_event) {
+function getTasks(idEvent) {
     $("#tasks").empty();
-    $("#tasks_idHolder").val(id_event);
+    $("#tasks_idHolder").val(idEvent);
     $("#new_task").val("");
-    $.getJSON("api/zaposlenici/getTasks/" + id_event, function (data) {
+    $.getJSON("api/getTasks/" + idEvent, function (data) {
         $.each(data, function (key, val) {
-            var redak = '<span ident = "0" ><input data-rbr="' + val.Id + '" id_zaposlenik= "' + id_event + '" type ="checkbox" ' + isChecked(val.IsComplete) + '/>' + ' ' + val.Name + '<br/><br/></span>';
+            var redak = '<span ident = "0" ><input data-rbr="' + val.Id + '" id_zaposlenik= "' + idEvent + '" type ="checkbox" ' + isChecked(val.IsComplete) + '/>' + ' ' + val.Name + '<br/><br/></span>';
             $("#tasks").append(redak);
         });
         /*

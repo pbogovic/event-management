@@ -181,7 +181,6 @@
     <Compile Include="Models\Zavrsni\Task.cs" />
     <Compile Include="Models\Zavrsni\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Controllers\zaposlenikController.cs" />
     <Compile Include="Models\Zaposlenik.cs" />
     <Compile Include="MyEvents.aspx.cs">
       <DependentUpon>MyEvents.aspx</DependentUpon>

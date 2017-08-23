@@ -87,7 +87,7 @@ function ZaposleniciProvjeriFormu() {
     if ($("#modal").isValid()) {
         $.post("api/event/add",
             {
-                name: $("#_name").val(),
+                Name: $("#_name").val(),
                 Description: $("#_surname").val(),
                 Id_category: $("#odjel_id_add").val(),
             }, function () {
@@ -105,7 +105,7 @@ function ZaposleniciProvjeriFormu_alter() {
         $.post("api/event/update",
             {
                 id: $("#idHolder").val(),
-                name: $("#alt_name").val(),
+                Name: $("#alt_name").val(),
                 Description: $("#alt_surname").val(),
                 Id_category: $("#odjel_id_alter").val(),
             }, function () {
