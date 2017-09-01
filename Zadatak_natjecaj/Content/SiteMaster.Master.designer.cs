@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace EManagement.Content {
+namespace Zadatak_natjecaj.Content {
     
     
     public partial class SiteMaster {

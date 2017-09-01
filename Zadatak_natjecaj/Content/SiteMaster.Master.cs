@@ -5,12 +5,13 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace EManagement.Content
+namespace Zadatak_natjecaj.Content
 {
     public partial class SiteMaster : System.Web.UI.MasterPage
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+
         }
     }
 }

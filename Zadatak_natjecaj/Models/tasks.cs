@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace EManagement.Models
+namespace Zadatak_natjecaj.Models
 {
     public class Tasks
     {

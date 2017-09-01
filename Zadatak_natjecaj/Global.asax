@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="EManagement.Global" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="Zadatak_natjecaj.Global" Language="C#" %>

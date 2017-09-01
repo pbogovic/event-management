@@ -6,9 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using EManagement.Models.Zavrsni;
+using Zadatak_natjecaj.Models.Zavrsni;
 
-namespace EManagement.Controllers
+namespace Zadatak_natjecaj.Controllers
 {
     public class EventController : ApiController
     {
