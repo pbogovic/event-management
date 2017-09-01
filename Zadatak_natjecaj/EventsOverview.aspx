@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Content/SiteMaster.Master" AutoEventWireup="true" CodeBehind="EventsOverview.aspx.cs" Inherits="Zadatak_natjecaj.administracijaZaposlenikaM" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Content/SiteMaster.Master" AutoEventWireup="true" CodeBehind="EventsOverview.aspx.cs" Inherits="EManagement.administracijaZaposlenikaM" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentHead" runat="server">
 

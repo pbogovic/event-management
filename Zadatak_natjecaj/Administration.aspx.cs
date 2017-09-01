@@ -5,13 +5,12 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Zadatak_natjecaj
+namespace EManagement
 {
     public partial class administracijaOdjela : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

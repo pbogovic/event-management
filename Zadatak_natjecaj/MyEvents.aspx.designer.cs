@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Zadatak_natjecaj
+namespace EManagement
 {
 
 

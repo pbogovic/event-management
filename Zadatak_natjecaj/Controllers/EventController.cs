@@ -6,9 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using Zadatak_natjecaj.Models.Zavrsni;
+using EManagement.Models.Zavrsni;
 
-namespace Zadatak_natjecaj.Controllers
+namespace EManagement.Controllers
 {
     public class EventController : ApiController
     {
@@ -26,7 +26,7 @@ namespace Zadatak_natjecaj.Controllers
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 
@@ -43,7 +43,7 @@ namespace Zadatak_natjecaj.Controllers
             }
             catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 
@@ -66,7 +66,7 @@ namespace Zadatak_natjecaj.Controllers
 
         [Route("api/category")]
         [HttpPost]
-        public void odjeli_add(Category odjel)
+        public void category_add(Category odjel)
         {
             try
             {

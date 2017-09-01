@@ -52,19 +52,7 @@ function getTasks(idEvent: number) {
             $("#tasks").append(redak);
         })
 
-        /*
-
-        $("#modalTasks").on("shown.bs.modal", function (data) {
-            $("#modalTasks").find("span[ident]").fadeIn(500);
-        })
-
-        $("#modalTasks").find("span[ident]").hide();
-
-        */
-
         $("#modalTasks").modal();
-
-        //$("#modalTasks").find("span").con
     }, function (data) { alert("Nesto je poslo po zlu"); console.log(data); })
 }
 

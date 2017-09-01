@@ -37,17 +37,7 @@ function getTasks(idEvent) {
             var redak = '<span ident = "0" ><input data-rbr="' + val.Id + '" id_zaposlenik= "' + idEvent + '" type ="checkbox" ' + isChecked(val.IsComplete) + '/>' + ' ' + val.Name + '<br/><br/></span>';
             $("#tasks").append(redak);
         });
-        /*
-
-        $("#modalTasks").on("shown.bs.modal", function (data) {
-            $("#modalTasks").find("span[ident]").fadeIn(500);
-        })
-
-        $("#modalTasks").find("span[ident]").hide();
-
-        */
         $("#modalTasks").modal();
-        //$("#modalTasks").find("span").con
     }, function (data) { alert("Nesto je poslo po zlu"); console.log(data); });
 }
 function isChecked(data) {

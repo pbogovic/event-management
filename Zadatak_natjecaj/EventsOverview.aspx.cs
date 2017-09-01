@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace Zadatak_natjecaj
+namespace EManagement
 {
     public partial class administracijaZaposlenikaM : System.Web.UI.Page
     {
