@@ -86,6 +86,7 @@
     <Build Include="dbo\Stored procedures\dbo.tasks_update.sql" />
     <Build Include="dbo\Stored procedures\dbo.categories_listAll.sql" />
     <Build Include="dbo\Sequences\dbo.users_seq.sql" />
+    <Build Include="dbo\Stored procedures\dbo.eventsByCategories.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="patrikDB.refactorlog" />

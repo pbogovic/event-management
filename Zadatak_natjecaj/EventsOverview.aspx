@@ -13,7 +13,7 @@
     <section id="services">
         <div class="container">
             <div class="row text-center">
-                <h1>Administracija Zaposlenika</h1>
+                <h1>Pregled događaja</h1>
             </div>
             <div class="row">
                 <table id="tableZaposlenici" class="display">
@@ -21,7 +21,7 @@
             </div>
             <div>
                 <div id="bottom" class="row">
-                    <input id="dodaj" type="button" value="Dodaj zaposlenika" class="btn-default btn-lg" />
+                    <input id="dodaj" type="button" value="Dodaj događaj" class="btn-default btn-lg" />
                 </div>
             </div>
         </div>
@@ -30,25 +30,25 @@
         <div id="modalHead" class="modal-dialog">
             <div class=" modal-content">
                 <div class="modal-header">
-                    <h3>Dodaj zaposlenika</h3>
+                    <h3>Dodaj događaj</h3>
                 </div>
                 <div class="modal-body">
                     <div class="container">
                         <div class="modal_formGroup">
-                            <label class="col-sm-4 control-label" for="_name">Ime</label>
+                            <label class="col-sm-4 control-label" for="_name">Naziv</label>
                             <div class="col-sm-8">
                                 <input data-validation="required" id="_name" type="text" class="modal_form" maxlength="30" />
                             </div>
                         </div>
                         <div class="modal_formGroup">
-                            <label class="col-sm-4 control-label" for="_surname">Prezime</label>
+                            <label class="col-sm-4 control-label" for="_surname">Opis</label>
                             <div class="col-sm-8">
-                                <input data-validation="required" id="_surname" type="text" class="modal_form" maxlength="30" />
+                                <input id="_surname" type="text" class="modal_form" maxlength="30" />
                             </div>
                         </div>
 
                         <div class="modal_formGroup">
-                            <label class="col-sm-4 control-label" for="odjel_id_add">Odjel</label>
+                            <label class="col-sm-4 control-label" for="odjel_id_add">Kategorija</label>
                             <div class="col-sm-8">
                                 <select id="odjel_id_add" class="modal_form">
                                 </select>
@@ -75,7 +75,7 @@
 
                 <div class="modal-header">
 
-                    <h3>Izmijeni zaposlenika</h3>
+                    <h3>Izmijeni događaj</h3>
                 </div>
 
                 <div class="modal-body">
@@ -85,7 +85,7 @@
                         <input type="text" id="idHolder" hidden />
 
                         <div class="modal_formGroup">
-                            <label class="col-sm-4 control-label" for="_name">Ime</label>
+                            <label class="col-sm-4 control-label" for="_name">Naziv</label>
 
                             <div class="col-sm-8">
                                 <input data-validation="required" id="alt_name" type="text" class="modal_form" maxlength="30" />
@@ -93,15 +93,15 @@
                         </div>
 
                         <div class="modal_formGroup">
-                            <label class="col-sm-4 control-label" for="_surname">Prezime</label>
+                            <label class="col-sm-4 control-label" for="_surname">Opis</label>
 
                             <div class="col-sm-8">
-                                <input data-validation="required" id="alt_surname" type="text" class="modal_form" maxlength="30" />
+                                <input id="alt_surname" type="text" class="modal_form" maxlength="30" />
                             </div>
                         </div>
 
                         <div class="modal_formGroup">
-                            <label class="col-sm-4 control-label" for="odjel_id_alter">Odjel</label>
+                            <label class="col-sm-4 control-label" for="odjel_id_alter">Kategorija</label>
 
                             <div class="col-sm-8">
                                 <select id="odjel_id_alter" class="modal_form">

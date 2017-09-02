@@ -21,8 +21,8 @@
         CreatedBy_Name: string;
         CreatedBy_Surname: string;
         CreatedBy_Img_url: string;
-        Category_Name: string;
-        Category_Img_url: string;
+        category_name: string;
+        category_img: string;
     }
 
     export interface User {
@@ -34,7 +34,9 @@
         Img_url: string;
     }
 
-    export interface myEvents extends Models.Event, Models.Category {
+    export interface EventsByCategories {
+        Name: string;
+        number: number;
     }
 }
 

@@ -33,7 +33,7 @@
 
             <div class="row text-center title">
 
-                <h1>Pregled zaposlenika</h1>
+                <h1>Moji događaji</h1>
             </div>
 
             <div class="row">
@@ -63,9 +63,7 @@
             <div class=" modal-content">
 
                 <div class="modal-header">
-
                     <h3>Zadaci</h3>
-                    <%=User%>
                 </div>
 
                 <form id="modal_tasks" target="">
@@ -135,13 +133,12 @@
     </div>
 
     <div id="patrikovTemplate" style="display: none">
-        <div data-odjel="[ODJEL]" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 portfolio-item">
+        <div data-odjel="[KATEGORIJA]" class="col-lg-3 col-md-4 col-sm-6 col-xs-12 portfolio-item">
             <div class="team text-center">
-                <div class="cover" style="background: url('[COVER_IMAGE]'); background-size: cover; min-height: 240px;"></div>
-                <img src="[EMPLOYEE_IMAGE]" class="avatar" />
+                <div class="cover" style="background: url('[COVER_IMAGE]'); background-size: cover; height: 180px;"></div>
                 <div class="title">
-                    <h4>[NAME_AND_SURNAME]</h4>
-                    <h5 class="muted regular">[ODJEL_NAZIV]</h5>
+                    <h4>[NAZIV]</h4>
+                    <h5 class="muted regular">[KATEGORIJA_NAZIV]</h5>
                 </div>
                 <a class="btn btn-blue-fill ripple" onclick="getTasks([ID])">Zadaci</a>
             </div>

@@ -16,7 +16,7 @@
 
             <div class="row text-center">
 
-                <h1>Administracija odjela</h1>
+                <h1>Administracija</h1>
             </div>
 
             <div class="row">
@@ -24,12 +24,15 @@
                 <table id="tableOdjeli" class="display">
                 </table>
             </div>
-
             <div>
                 <div id="bottom" class="row">
 
-                    <input id="dodaj" type="button" value="Dodaj odjel" class="btn-default btn-lg" />
+                    <input id="dodaj" type="button" value="Dodaj kategoriju" class="btn-default btn-lg" />
                 </div>
+            </div>
+
+            <div style="margin: 25px 20%;">
+                <canvas id="myChart" class="cArea"></canvas>
             </div>
         </div>
     </section>
@@ -42,7 +45,7 @@
 
                 <div class="modal-header">
 
-                    <h3>Dodavanje odjela</h3>
+                    <h3>Dodavanje kategorije</h3>
                 </div>
 
                 <div class="modal-body">
@@ -50,7 +53,7 @@
                     <div class="container">
 
                         <div class="modal_formGroup">
-                            <label class="col-sm-4 control-label" for="_odjelNaziv">Naziv odjela</label>
+                            <label class="col-sm-4 control-label" for="_odjelNaziv">Naziv</label>
                             <div class="col-sm-8">
                                 <input data-validation="required" id="_odjelNaziv" type="text" class="modal_form" maxlength="50" />
                             </div>
@@ -76,7 +79,7 @@
 
                 <div class="modal-header">
 
-                    <h3>Mijenjanje odjela</h3>
+                    <h3>Mijenjanje kategorije</h3>
                 </div>
 
                 <div class="modal-body">
@@ -87,7 +90,7 @@
 
                         <div class="modal_formGroup">
 
-                            <label class="col-sm-4 control-label" for="alt_odjelNaziv">Name</label>
+                            <label class="col-sm-4 control-label" for="alt_odjelNaziv">Naziv</label>
                         </div>
 
                         <div class="col-sm-8">

@@ -7,9 +7,8 @@ $(function () {
         data: [],
         columns: [
             { data: 'Name', title: "Naziv" },
-            { data: 'Category_Name', title: "Kategorija" },
+            { data: 'category_name', title: "Kategorija" },
             { data: 'Description', title: "Opis" },
-            { title: 'Stvorio', render: function (coldata, colType, row: Models.Event) { return row.CreatedBy_Name + " " + row.CreatedBy_Surname; } },
             { data: 'Id', title: 'Mijenjaj', render: function (data) { return "<input type ='button' value='Promijeni' onclick='ZaposleniciGetByid(" + data + ")' >" } },
             { data: 'Id', title: "Brisi", render: function (data) { return "<input type='button' value ='Brisi' onclick='ZaposleniciDelete(" + data + ")'>" } }
 
@@ -71,15 +70,12 @@ function ZaposleniciGetByid(idEvent: number) {
 
 function ZaposleniciDelete(idZaposlenik: number) {
     console.log("Odkomentiraj funkciju");
-
     /*
-
     $.get("api/zaposlenici/remove/" + idZaposlenik,
         function () {
            ZaposleniciGet();
         },
     )
-
     */
 }
 

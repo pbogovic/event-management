@@ -108,9 +108,12 @@
     <Content Include="font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
     <Content Include="font-awesome-4.7.0\HELP-US-OUT.txt" />
     <Content Include="Images\Aperture_Science.png" />
+    <Content Include="Images\birthday_img.jpg" />
+    <Content Include="Images\party_img.jpg" />
     <Content Include="Images\plus_icon.png" />
     <TypeScriptCompile Include="Models\Models.ts" />
     <TypeScriptCompile Include="EventsOverview.ts" />
+    <Content Include="Images\izlet_img.jpg" />
     <Content Include="Scripts\agency.js" />
     <Content Include="Scripts\agency.min.js" />
     <Content Include="Images\zaposlenik7.jpg" />
@@ -140,7 +143,6 @@
     <Content Include="Web.config" />
     <Content Include="Css\Zadatakcss.css" />
     <TypeScriptCompile Include="Scripts\Izvjestaj_bad.ts" />
-    <TypeScriptCompile Include="Scripts\typings\chartjs\index.d.ts" />
     <TypeScriptCompile Include="MyEvents.ts" />
     <Content Include="MyEvents.aspx" />
   </ItemGroup>
@@ -178,6 +180,7 @@
     <Compile Include="Models\ZapByOdjel.cs" />
     <Compile Include="Models\Zavrsni\Category.cs" />
     <Compile Include="Models\Zavrsni\Event.cs" />
+    <Compile Include="Models\Zavrsni\EventsByCategories.cs" />
     <Compile Include="Models\Zavrsni\Task.cs" />
     <Compile Include="Models\Zavrsni\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -236,6 +239,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\typings\chartjs\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Administration.ts" />

@@ -14,7 +14,7 @@ namespace Zadatak_natjecaj.Models.Zavrsni
         public string CreatedBy_Name { get; set; }
         public string CreatedBy_Surname { get; set; }
         public string CreatedBy_Img_url { get; set; }
-        public string Category_Name { get; set; }
-        public string Category_Img_url { get; set; }
+        public string category_name { get; set; }
+        public string category_img { get; set; }
     }
 }

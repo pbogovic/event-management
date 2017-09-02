@@ -204,6 +204,23 @@ namespace Zadatak_natjecaj.Controllers
                 throw;
             }
         }
+
+        [Route("api/izvjestaj/eventsbycategory")]
+        [HttpGet]
+        public IEnumerable<EventsByCategories> GetEventsByCategory()
+        {
+            try
+            {
+                using (myConnection)
+                {
+                    return myConnection.Query<EventsByCategories>("[dbo].[eventsByCategories]", new { }, commandType: System.Data.CommandType.StoredProcedure);
+                };
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
     }
 
     public class TaskList

@@ -1,11 +1,21 @@
 var tableRef = null;
+var pieGrafLabels = [];
+var pieGrafData = [];
+var pieGrafColors = ["0F434F", "447884"];
+var chartGrafLabels = [];
+var chartGrafData = [];
+var chartGrafColors = "0F434F";
+var ctx = null;
+var chart = null;
+var ctx2 = null;
+var chart2 = null;
 $(function () {
     tableRef = $("#tableOdjeli").DataTable({
         data: [],
         columns: [
-            { data: 'Name', title: "Naziv" },
-            { data: 'Id', title: 'Mijenjaj', render: function (data) { return "<input type ='button' value='Promijeni' onclick='getCategory(" + data + ")' >"; } },
-            { data: 'Id', title: "Brisi", render: function (data) { return "<input type='button' value ='Brisi' onclick='deleteEmployee(" + data + ")'>"; } }
+            { data: 'Name', width: "600px", title: "Naziv" },
+            { data: 'Id', width: "80px", title: 'Mijenjaj', render: function (data) { return "<input type ='button' value='Promijeni' onclick='getCategory(" + data + ")' >"; } },
+            { data: 'Id', width: "80px", title: "Brisi", render: function (data) { return "<input type='button' value ='Brisi' onclick='deleteEmployee(" + data + ")'>"; } }
         ]
     });
     console.log("Tablica" + tableRef);
@@ -32,6 +42,46 @@ $(function () {
         });
     });
     getOdjeli();
+    $.getJSON("api/izvjestaj/eventsbycategory", function (data) {
+        data.forEach(function (value) {
+            pieGrafData.push(value.number);
+            pieGrafLabels.push(value.Name);
+        });
+    });
+    console.log(pieGrafLabels.toString() + "\n" + pieGrafData.toString() + "\n" + pieGrafColors.toString());
+    ctx = document.getElementById('myChart');
+    ctx = ctx.getContext('2d');
+    chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'pie',
+        // The data for our dataset
+        data: {
+            labels: pieGrafLabels,
+            datasets: [{
+                    label: "My Prvi dataset",
+                    backgroundColor: ['rgb(15, 67, 79)', 'rgb(107, 148, 158)'],
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: pieGrafData
+                }]
+        },
+        // Configuration options go here
+        options: {
+            layout: {
+                padding: {
+                    left: 15,
+                    right: 15,
+                    top: 15,
+                    bottom: 15
+                }
+            },
+            title: {
+                text: "Događaji po kategorijama",
+                display: true,
+            },
+            responsive: true,
+            maintainAspectRatio: false,
+        }
+    });
 });
 function getOdjeli() {
     $.getJSON("api/category", function (data) {

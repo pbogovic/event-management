@@ -19,11 +19,10 @@ function StvoriKartice() {
         $.each(data, function (key, val) {
             var element = $("#patrikovTemplate").html()
                 .replace("[ID]", val.Id.toString())
-                .replace("[NAME_AND_SURNAME]", val.Name)
-                .replace("[ODJEL_NAZIV]", val.Description)
-                .replace("[COVER_IMAGE]", val.Category_Img_url)
-                .replace("[EMPLOYEE_IMAGE]", val.CreatedBy_Img_url)
-                .replace("[ODJEL]", val.Category_Name);
+                .replace("[NAZIV]", val.Name)
+                .replace("[KATEGORIJA]", val.category_name)
+                .replace("[COVER_IMAGE]", val.category_img)
+                .replace("[KATEGORIJA_NAZIV]", val.category_name);
             $("#galerija").append(element);
         });
     });
