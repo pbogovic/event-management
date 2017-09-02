@@ -67,15 +67,14 @@ function alterTasks() {
 }
 
 function addTask() {
-    var task = $("#new_task").val();
+    var taskObject: Models.Task = <Models.Task>{};
 
-    var idZ = $("#tasks_idHolder").val();
+    taskObject.Name = $("#new_task").val();
 
-    $.post("/api/tasks/add", {
-        id_zaposlenik: idZ,
-        zadatak_naslov: task
-    }, function (data) {
-        getTasks(idZ);
+    taskObject.Id_Event = $("#tasks_idHolder").val();
+
+    $.post("/api/tasks/add", taskObject, function (data) {
+        getTasks(taskObject.Id_Event);
     })
 }
 

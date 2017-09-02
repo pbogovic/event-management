@@ -50,13 +50,11 @@ function alterTasks() {
     console.log($("tasks").children());
 }
 function addTask() {
-    var task = $("#new_task").val();
-    var idZ = $("#tasks_idHolder").val();
-    $.post("/api/tasks/add", {
-        id_zaposlenik: idZ,
-        zadatak_naslov: task
-    }, function (data) {
-        getTasks(idZ);
+    var taskObject = {};
+    taskObject.Name = $("#new_task").val();
+    taskObject.Id_Event = $("#tasks_idHolder").val();
+    $.post("/api/tasks/add", taskObject, function (data) {
+        getTasks(taskObject.Id_Event);
     });
 }
 function closeActiveModal() {
